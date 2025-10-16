@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const animalSchema = mongoose.Schema({
+const articuloSchema = mongoose.Schema({
   titulo: {
     type: String,
     required: true,
@@ -30,10 +30,6 @@ const animalSchema = mongoose.Schema({
   },
   enlace: {
     type: String,
-    required: true,
-  },
-  pdf: {
-    type: Binary,
     required: true,
   }
 });
