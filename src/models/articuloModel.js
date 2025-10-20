@@ -31,11 +31,6 @@ const articuloSchema = mongoose.Schema({
   enlace: {
     type: String,
     required: true,
-  },
-  archivoPDF: {
-    data: Buffer, // el binario del archivo
-    contentType: { type: String, default: "application/pdf" },
-    filename: { type: String }
   }
 });
 module.exports = mongoose.model("Articulo", articuloSchema);
