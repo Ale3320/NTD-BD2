@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
 const articuloSchema = mongoose.Schema({
+  id: {
+    type: Number,
+    required: true, 
+  },
   titulo: {
     type: String,
     required: true,

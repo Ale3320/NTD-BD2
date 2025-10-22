@@ -17,4 +17,15 @@ router.get("/articulos", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+router.put("/articulos/:id", (req, res) => {
+  const { id } = req.params;
+  const { titulo, autores, anioPublicacion, resumen, catReferencias, nombreBD, revista, enlace} = req.body;
+  articuloSchema
+        .updateOne({ _id: id }, {
+            $set: { titulo, autores, anioPublicacion, resumen, catReferencias, nombreBD, revista, enlace }
+        })
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
+});
+
 module.exports = router;
