@@ -28,4 +28,16 @@ router.put("/articulos/:id", (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
+router.delete("/articulos/:id", (req, res) => {
+    const { id } = req.params;
+    articuloSchema
+        .findByIdAndDelete(id)
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((error) => {
+            res.json({ message: error });
+        });
+});
+
 module.exports = router;
